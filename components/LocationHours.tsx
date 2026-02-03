@@ -14,6 +14,9 @@ export function LocationHours({ locale, isArabic }: LocationHoursProps) {
   const whatsappLink = `https://wa.me/${siteConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(
     siteConfig.whatsappMessage,
   )}`;
+  const mapsCtaUrl = siteConfig.googleMapsUrl.includes('?')
+    ? `${siteConfig.googleMapsUrl}&utm_source=website&utm_medium=cta&utm_campaign=maps`
+    : `${siteConfig.googleMapsUrl}?utm_source=website&utm_medium=cta&utm_campaign=maps`;
   const hours = [
     { label: locale === 'ar' ? 'الإثنين - السبت' : 'Lun - Sam', value: '09h30 - 18h00' },
     { label: locale === 'ar' ? 'الأحد' : 'Dimanche', value: locale === 'ar' ? 'مغلق' : 'Fermé' },
@@ -51,7 +54,7 @@ export function LocationHours({ locale, isArabic }: LocationHoursProps) {
                   WhatsApp
                 </Link>
                 <Link
-                  href={siteConfig.googleMapsUrl}
+                  href={mapsCtaUrl}
                   className="rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-charcoal transition hover:-translate-y-0.5 hover:border-accent hover:text-accent"
                   target="_blank"
                   rel="noreferrer"

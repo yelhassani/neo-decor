@@ -18,6 +18,12 @@ export function Footer({ locale, isArabic }: FooterProps) {
           <div>
             <div className="text-lg font-semibold text-charcoal">{siteConfig.businessName}</div>
             <p className="text-sm text-gray-600">{copy.tagline}</p>
+            <div className={`mt-2 text-sm text-gray-600 ${isArabic ? 'text-right' : 'text-left'}`}>
+              <div>{siteConfig.address}</div>
+              <a className="font-semibold text-charcoal hover:text-accent" href={`tel:${siteConfig.whatsappNumber}`}>
+                {siteConfig.whatsappDisplay}
+              </a>
+            </div>
           </div>
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <span>{copy.socials}</span>

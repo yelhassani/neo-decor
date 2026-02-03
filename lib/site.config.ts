@@ -4,6 +4,10 @@
   whatsappNumber: '+212627213707',
   whatsappDisplay: '+212 6 27 21 37 07',
   whatsappMessage: 'Bonjour, je souhaite des infos sur vos tapis.',
+  streetAddress: '106-108 Rue KHALID IBN ELOUALID',
+  addressLocality: 'Nador',
+  postalCode: '62000',
+  addressCountry: 'MA',
   address: '106-108 Rue KHALID IBN ELOUALID, Nador 62000, Maroc',
   googleMapsUrl: 'https://maps.app.goo.gl/9FmF4Jn2k7Fpc1RS8',
   googleMapsEmbedUrl:

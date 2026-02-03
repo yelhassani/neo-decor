@@ -1,19 +1,18 @@
 ﻿import type { Metadata } from 'next';
 import { Playfair_Display, Cairo } from 'next/font/google';
 import '../styles/globals.css';
+import { content } from '../lib/content';
 import { siteConfig } from '../lib/site.config';
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600', '700'], variable: '--font-playfair' });
 const cairo = Cairo({ subsets: ['arabic'], weight: ['400', '600', '700'], variable: '--font-cairo' });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.businessName} | Tapis premium à ${siteConfig.city}`,
-  description:
-    'Tapis premium, valeur sûre et conseils personnalisés à Nador. Boutique Neo-Decor, showroom local avec large choix.',
+  title: content.fr.seo.title,
+  description: content.fr.seo.description,
   openGraph: {
-    title: `${siteConfig.businessName} | Tapis premium à ${siteConfig.city}`,
-    description:
-      'Tapis premium, valeur sûre et conseils personnalisés à Nador. Boutique Neo-Decor, showroom local avec large choix.',
+    title: content.fr.seo.title,
+    description: content.fr.seo.description,
     type: 'website',
     locale: 'fr_FR',
     siteName: siteConfig.businessName,
@@ -21,8 +20,37 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Store',
+    name: siteConfig.businessName,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.streetAddress,
+      addressLocality: siteConfig.addressLocality,
+      postalCode: siteConfig.postalCode,
+      addressCountry: siteConfig.addressCountry,
+    },
+    telephone: siteConfig.whatsappNumber,
+    sameAs: [siteConfig.googleMapsUrl, siteConfig.instagramUrl],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '09:30',
+        closes: '18:00',
+      },
+    ],
+  };
+
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body className={`${playfair.variable} ${cairo.variable} antialiased bg-sand text-charcoal`}>
         {children}
       </body>

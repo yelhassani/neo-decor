@@ -18,6 +18,7 @@ export function Why({ locale, isArabic }: WhyProps) {
           </p>
           <h2 className="mt-2 text-3xl font-semibold text-charcoal sm:text-4xl">{copy.title}</h2>
           <p className="mt-4 max-w-3xl text-gray-700">{copy.story}</p>
+          <p className="mt-3 max-w-3xl text-sm text-gray-600">{copy.localNote}</p>
           <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {copy.highlights.map((item) => (
               <div key={item} className="flex items-start gap-3">

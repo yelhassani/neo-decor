@@ -37,7 +37,13 @@ export function Gallery({ locale, isArabic }: GalleryProps) {
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {galleryImages.map((src, idx) => (
             <div key={idx} className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow-sm">
-              <Image src={src} alt={`Placeholder ${idx + 1}`} fill className="object-cover" sizes="(min-width: 1024px) 33vw, 50vw" />
+              <Image
+                src={src}
+                alt={copy.alts[idx] ?? (locale === 'ar' ? 'سجاد معروض في المتجر' : 'Tapis exposé en magasin')}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 33vw, 50vw"
+              />
             </div>
           ))}
         </div>
