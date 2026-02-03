@@ -31,12 +31,10 @@ export function Hero({ locale, isArabic }: HeroProps) {
             <h1 className="text-3xl font-semibold leading-tight text-charcoal sm:text-4xl lg:text-5xl">
               {copy.headline}
             </h1>
-            <p className="text-lg text-gray-700 sm:text-xl">{copy.subheadline}</p>
-          </div>
-          <div className={`flex flex-wrap gap-3 ${isArabic ? 'justify-end' : 'justify-start'}`}>
+            <div className={`order-2 flex flex-col gap-3 sm:flex-row ${isArabic ? 'sm:justify-end' : 'sm:justify-start'}`}>
             <Link
               href={whatsappLink}
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+              className="w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:w-auto"
               target="_blank"
               rel="noreferrer"
             >
@@ -44,12 +42,14 @@ export function Hero({ locale, isArabic }: HeroProps) {
             </Link>
             <Link
               href={siteConfig.googleMapsUrl}
-              className="rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-charcoal transition hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+              className="w-full rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-charcoal transition hover:-translate-y-0.5 hover:border-accent hover:text-accent sm:w-auto"
               target="_blank"
               rel="noreferrer"
             >
               {copy.secondaryCta}
             </Link>
+          </div>
+            <p className="text-base text-gray-700 sm:text-xl">{copy.subheadline}</p>
           </div>
           <div className={`flex flex-wrap gap-3 text-sm font-semibold text-gray-700 ${isArabic ? 'justify-end' : 'justify-start'}`}>
             {copy.trustBullets.map((item) => (
@@ -66,7 +66,12 @@ export function Hero({ locale, isArabic }: HeroProps) {
           </div>
           <div className="grid grid-cols-2 gap-3">
             {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="aspect-square rounded-2xl bg-gradient-to-br from-white via-sand to-gray-100 shadow-inner ring-1 ring-gray-200" />
+              <div
+                key={item}
+                className={`aspect-square rounded-2xl bg-gradient-to-br from-white via-sand to-gray-100 shadow-inner ring-1 ring-gray-200 ${
+                  item > 2 ? 'hidden sm:block' : ''
+                }`}
+              />
             ))}
           </div>
           <p className={`mt-4 text-sm text-gray-600 ${isArabic ? 'text-right' : 'text-left'}`}>

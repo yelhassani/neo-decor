@@ -7,6 +7,11 @@ import { siteConfig } from '../lib/site.config';
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600', '700'], variable: '--font-playfair' });
 const cairo = Cairo({ subsets: ['arabic'], weight: ['400', '600', '700'], variable: '--font-cairo' });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: content.fr.seo.title,
   description: content.fr.seo.description,

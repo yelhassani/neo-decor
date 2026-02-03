@@ -26,7 +26,7 @@ export function LangToggle({ locale, onChange }: LangToggleProps) {
               active
                 ? 'bg-accent text-white shadow-sm'
                 : 'text-charcoal hover:bg-gray-100'
-            } px-3 py-1 text-sm font-semibold rounded-full transition-colors`}
+            } px-4 py-2 text-sm font-semibold rounded-full transition-colors`}
             aria-pressed={active}
           >
             {item.label}

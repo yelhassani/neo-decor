@@ -9,6 +9,7 @@ import { Gallery } from '../components/Gallery';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { LocationHours } from '../components/LocationHours';
+import { MobileNavBar } from '../components/MobileNavBar';
 import { Trust } from '../components/Trust';
 import { Why } from '../components/Why';
 import { content, Locale } from '../lib/content';
@@ -21,6 +22,12 @@ export default function HomePage() {
     () => `https://wa.me/${siteConfig.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`,
     [],
   );
+  const mapsCtaUrl = useMemo(() => {
+    if (siteConfig.googleMapsUrl.includes('?')) {
+      return `${siteConfig.googleMapsUrl}&utm_source=website&utm_medium=cta&utm_campaign=maps`;
+    }
+    return `${siteConfig.googleMapsUrl}?utm_source=website&utm_medium=cta&utm_campaign=maps`;
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -70,7 +77,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sand via-white to-sand text-charcoal">
       <Header locale={locale} onChange={setLocale} isArabic={isArabic} />
-      <main dir={isArabic ? 'rtl' : 'ltr'} lang={locale === 'ar' ? 'ar' : 'fr'}>
+      <main dir={isArabic ? 'rtl' : 'ltr'} lang={locale === 'ar' ? 'ar' : 'fr'} className="pb-44 sm:pb-0">
         <Hero locale={locale} isArabic={isArabic} />
         <Categories locale={locale} isArabic={isArabic} />
         <Trust locale={locale} isArabic={isArabic} />
@@ -81,15 +88,31 @@ export default function HomePage() {
         <CTA locale={locale} isArabic={isArabic} />
       </main>
       <Footer locale={locale} isArabic={isArabic} />
-      <a
-        href={whatsappLink}
-        className="sticky-whatsapp sm:hidden"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="WhatsApp"
+      <div
+        className={`mobile-action-bar fixed bottom-[72px] left-0 right-0 z-40 px-4 sm:hidden ${
+          isArabic ? 'text-right' : 'text-left'
+        }`}
       >
-        {content[locale].hero.primaryCta}
-      </a>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2">
+          <a
+            href={whatsappLink}
+            className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {content[locale].hero.primaryCta}
+          </a>
+          <a
+            href={mapsCtaUrl}
+            className="inline-flex w-full items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-charcoal"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {content[locale].hero.secondaryCta}
+          </a>
+        </div>
+      </div>
+      <MobileNavBar locale={locale} isArabic={isArabic} />
     </div>
   );
 }

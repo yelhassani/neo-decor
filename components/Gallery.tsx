@@ -34,7 +34,7 @@ export function Gallery({ locale, isArabic }: GalleryProps) {
               : 'Images fictives. Remplacez-les par vos photos de showroom.'}
           </p>
         </div>
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((src, idx) => (
             <div key={idx} className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow-sm">
               <Image
