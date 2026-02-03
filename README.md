@@ -11,7 +11,7 @@ npm install
 ```bash
 npm run dev
 ```
-3. Ouvrez http://localhost:3000
+3. Ouvrez http://localhost:3003
 
 ## Configuration principale
 Tous les paramètres métier sont dans `lib/site.config.ts` : numéro WhatsApp, message prérempli, adresse, liens Google Maps, Instagram, horaires. Le contenu bilingue (titres, descriptions, FAQ, etc.) est dans `lib/content.ts`.
