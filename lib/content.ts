@@ -71,9 +71,9 @@ export type Content = {
 export const content: Record<Locale, Content> = {
   fr: {
     seo: {
-      title: 'Neo-Decor Nador | Magasin de tapis premium, salon & chambre',
+      title: 'Neo-Decor Nador | Magasin de tapis, salon, chambre & couloir',
       description:
-        'Boutique de tapis à Nador : salon, chambre, couloir, berbère et moderne. Conseils en magasin + WhatsApp.',
+        'Magasin de tapis à Nador : salon, chambre, couloir, berbère, moderne et moquette. Conseils en magasin + WhatsApp.',
     },
     nav: {
       hero: 'Accueil',
@@ -84,19 +84,19 @@ export const content: Record<Locale, Content> = {
       faq: 'FAQ',
     },
     hero: {
-      headline: 'Tapis premium, prix justes, accueil chaleureux à Nador',
+      headline: 'Magasin de tapis à Nador : salon, chambre et couloir',
       subheadline:
-        'Neo-Decor sélectionne des tapis salon, chambre et couloir avec un excellent rapport qualité/prix et des conseils en magasin.',
+        'Neo-Decor sélectionne des tapis salon, chambre, couloir et moquette avec un excellent rapport qualité/prix et des conseils sur place.',
       primaryCta: 'WhatsApp',
       secondaryCta: 'Itinéraire',
-      trustBullets: ['Qualité', 'Prix', 'Conseil'],
+      trustBullets: ['Qualité', 'Prix juste', 'Conseil local'],
     },
     categories: {
       title: 'Choisissez votre univers',
       items: [
         { title: 'Salon', description: 'Tapis doux et résistants pour vivre et recevoir.' },
         { title: 'Chambre', description: 'Confort feutré et ambiance cosy pour le repos.' },
-        { title: 'Couloir', description: 'Formats allongés et anti-dérapants pour les passages.' },
+        { title: 'Couloir', description: 'Formats allongés, moquette et anti-dérapant pour les passages.' },
         { title: 'Berbère / Traditionnel', description: 'Motifs authentiques, laine sélectionnée et finitions soignées.' },
         { title: 'Moderne', description: 'Designs épurés, couleurs actuelles et textures élégantes.' },
         { title: 'Sur mesure / Grand format', description: 'Solutions personnalisées pour grands salons, hôtels ou bureaux.' },
@@ -113,14 +113,14 @@ export const content: Record<Locale, Content> = {
     },
     gallery: {
       title: 'Inspiration & textures',
-      description: 'Aperçu de styles disponibles en magasin. Remplacez ces images par vos photos réelles.',
+      description: 'Aperçu de styles disponibles en magasin à Nador. Remplacez ces images par vos photos réelles.',
       alts: [
         'Tapis moderne en salon lumineux à Nador',
-        'Tapis de chambre cosy, style doux',
-        'Tapis berbère texturé pour salon',
-        'Tapis élégant pour espace détente',
+        'Tapis de chambre cosy pour maison à Nador',
+        'Tapis berbère texturé pour salon marocain',
+        'Tapis élégant pour coin détente à Nador',
         'Tapis contemporain avec teintes naturelles',
-        'Tapis décoratif pour pièce de vie',
+        'Tapis décoratif pour pièce de vie à Nador',
       ],
     },
     why: {
@@ -128,7 +128,7 @@ export const content: Record<Locale, Content> = {
       story:
         'Boutique locale spécialisée dans le tapis premium. Nous sélectionnons chaque pièce pour allier confort, durabilité et esthétique, avec des conseils personnalisés pour votre intérieur à Nador et environs.',
       localNote:
-        'Vous cherchez un tapis à Nador ? Notre showroom propose des modèles pour salon, chambre et couloir, avec des conseils rapides sur place ou via WhatsApp.',
+        'Vous cherchez un tapis à Nador ? Notre showroom propose des modèles pour salon, chambre, couloir et moquette, avec des conseils rapides sur place ou via WhatsApp.',
       highlights: [
         'Sélection curatée : modèles premium et tendances',
         'Valeur sûre : qualité au prix juste',
@@ -146,6 +146,8 @@ export const content: Record<Locale, Content> = {
     faq: {
       title: 'Questions fréquentes',
       items: [
+        { question: 'Où acheter un tapis à Nador ?', answer: 'Dans notre magasin Neo-Decor à Nador. Venez en showroom ou contactez-nous sur WhatsApp.' },
+        { question: 'Avez-vous du stock en magasin à Nador ?', answer: 'Oui, stock renouvelé régulièrement pour tapis salon, chambre et couloir.' },
         { question: 'Livrez-vous à Nador et alentours ?', answer: 'Oui, livraison possible à Nador et villes proches. Demandez les options sur WhatsApp.' },
         { question: 'Livrez-vous à Beni Ansar ou Al Aroui ?', answer: 'Oui, nous pouvons livrer dans les zones proches de Nador. Contactez-nous pour les délais.' },
         { question: 'Quels moyens de paiement acceptez-vous ?', answer: 'Espèces, carte bancaire en magasin et virement. Paiement sécurisé sur place.' },
@@ -162,16 +164,16 @@ export const content: Record<Locale, Content> = {
       cta: 'Parler sur WhatsApp',
     },
     footer: {
-      tagline: 'Tapis premium, conseils personnalisés à Nador',
+      tagline: 'Magasin de tapis à Nador : conseils personnalisés',
       rights: '© Neo-Decor. Tous droits réservés.',
       socials: 'Suivez-nous',
     },
   },
   ar: {
     seo: {
-      title: 'نيو ديكور الناظور | متجر سجاد فاخر للصالون وغرف النوم',
+      title: 'نيو ديكور الناظور | متجر سجاد للصالون وغرف النوم والممرات',
       description:
-        'متجر سجاد في الناظور: صالون، غرفة نوم، ممرات، بربري وعصري. نصائح في المتجر وواتساب سريع.',
+        'متجر سجاد في الناظور: صالون، غرفة نوم، ممرات، بربري، عصري وموكيت. نصائح في المتجر وواتساب سريع.',
     },
     nav: {
       hero: 'الرئيسية',
@@ -182,19 +184,19 @@ export const content: Record<Locale, Content> = {
       faq: 'الأسئلة',
     },
     hero: {
-      headline: 'سجاد فاخر بأسعار عادلة واستقبال دافئ في الناظور',
+      headline: 'متجر سجاد في الناظور للصالون وغرف النوم والممرات',
       subheadline:
-        'نيو ديكور يقدم سجاد صالون وغرف نوم وممرات بجودة عالية وأسعار مناسبة مع نصائح في المتجر.',
+        'نيو ديكور يقدم سجاد صالون وغرف نوم وممرات وموكيت بجودة عالية وأسعار مناسبة مع نصائح في المتجر.',
       primaryCta: 'واتساب',
       secondaryCta: 'الاتجاهات',
-      trustBullets: ['جودة', 'سعر', 'نصيحة'],
+      trustBullets: ['جودة', 'سعر عادل', 'نصيحة محلية'],
     },
     categories: {
       title: 'اختر المجموعة المناسبة',
       items: [
         { title: 'الصالون', description: 'سجاد ناعم ومتين للحياة والاستقبال.' },
         { title: 'غرفة النوم', description: 'راحة دافئة وأجواء هادئة للنوم.' },
-        { title: 'الممر', description: 'مقاسات طويلة ومضادة للانزلاق للممرات.' },
+        { title: 'الممر', description: 'مقاسات طويلة وموكيت ومضادة للانزلاق للممرات.' },
         { title: 'بربري / تقليدي', description: 'رسومات أصلية وصوف مختار وتشطيبات متقنة.' },
         { title: 'عصري', description: 'تصاميم بسيطة بألوان حديثة وملمس أنيق.' },
         { title: 'مقاس خاص / كبير', description: 'حلول مخصصة للصالونات الكبيرة والفنادق والمكاتب.' },
@@ -211,14 +213,14 @@ export const content: Record<Locale, Content> = {
     },
     gallery: {
       title: 'إلهام وخامات',
-      description: 'لمحة عن الأنماط المتوفرة. استبدل هذه الصور بصورك الحقيقية.',
+      description: 'لمحة عن الأنماط المتوفرة في الناظور. استبدل هذه الصور بصورك الحقيقية.',
       alts: [
         'سجاد عصري لصالون مشرق في الناظور',
-        'سجاد غرفة نوم بأجواء هادئة',
-        'سجاد بربري بخامة واضحة للصالون',
-        'سجاد أنيق لركن الاسترخاء',
+        'سجاد غرفة نوم بأجواء هادئة في الناظور',
+        'سجاد بربري بخامة واضحة للصالون المغربي',
+        'سجاد أنيق لركن الاسترخاء في الناظور',
         'سجاد حديث بألوان طبيعية',
-        'سجاد ديكور لفضاء المعيشة',
+        'سجاد ديكور لفضاء المعيشة في الناظور',
       ],
     },
     why: {
@@ -226,7 +228,7 @@ export const content: Record<Locale, Content> = {
       story:
         'متجر محلي متخصص في السجاد الفاخر. نختار كل قطعة لنجمع بين الراحة والمتانة والجمال، مع نصائح شخصية لمنزلك في الناظور والمناطق القريبة.',
       localNote:
-        'تبحث عن سجاد في الناظور؟ صالة العرض لدينا تضم موديلات للصالون وغرف النوم والممرات، مع نصائح سريعة في المتجر أو عبر واتساب.',
+        'تبحث عن سجاد في الناظور؟ صالة العرض لدينا تضم موديلات للصالون وغرف النوم والممرات والموكيت، مع نصائح سريعة في المتجر أو عبر واتساب.',
       highlights: [
         'اختيار منسق: موديلات فاخرة وعصرية',
         'قيمة مضمونة: جودة بسعر عادل',
@@ -244,6 +246,8 @@ export const content: Record<Locale, Content> = {
     faq: {
       title: 'أسئلة شائعة',
       items: [
+        { question: 'أين أشتري سجادة في الناظور؟', answer: 'في متجر نيو ديكور بالناظور. تفضل بزيارة المعرض أو تواصل معنا عبر واتساب.' },
+        { question: 'هل لديكم سجاد متوفر حالياً في الناظور؟', answer: 'نعم، مخزون متجدد لسجاد الصالون وغرف النوم والممرات.' },
         { question: 'هل تقومون بالتوصيل داخل الناظور والمناطق المجاورة؟', answer: 'نعم، التوصيل متاح في الناظور والمدن القريبة. اسأل عن الخيارات على واتساب.' },
         { question: 'هل توصلون إلى بني أنصار أو العروي؟', answer: 'نعم، يمكننا التوصيل للمناطق القريبة من الناظور. تواصل معنا للتفاصيل.' },
         { question: 'ما هي طرق الدفع المتوفرة؟', answer: 'نقبل الدفع نقداً وبالبطاقة في المتجر والتحويل البنكي. الدفع آمن في المتجر.' },
@@ -260,7 +264,7 @@ export const content: Record<Locale, Content> = {
       cta: 'تحدث على واتساب',
     },
     footer: {
-      tagline: 'سجاد فاخر ونصائح شخصية في الناظور',
+      tagline: 'متجر سجاد في الناظور مع نصائح شخصية',
       rights: '© نيو ديكور. جميع الحقوق محفوظة.',
       socials: 'تابعنا',
     },

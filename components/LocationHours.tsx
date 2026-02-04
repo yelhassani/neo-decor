@@ -17,6 +17,7 @@ export function LocationHours({ locale, isArabic }: LocationHoursProps) {
   const mapsCtaUrl = siteConfig.googleMapsUrl.includes('?')
     ? `${siteConfig.googleMapsUrl}&utm_source=website&utm_medium=cta&utm_campaign=maps`
     : `${siteConfig.googleMapsUrl}?utm_source=website&utm_medium=cta&utm_campaign=maps`;
+  const openingHoursNote = siteConfig.openingHours;
   const hours = [
     { label: locale === 'ar' ? 'الإثنين - السبت' : 'Lun - Sam', value: '09h30 - 18h00' },
     { label: locale === 'ar' ? 'الأحد' : 'Dimanche', value: locale === 'ar' ? 'مغلق' : 'Fermé' },
@@ -43,6 +44,7 @@ export function LocationHours({ locale, isArabic }: LocationHoursProps) {
                     </div>
                   ))}
                 </div>
+                <p className="mt-2 text-xs text-gray-500">{openingHoursNote}</p>
               </div>
               <div className={`flex flex-wrap gap-3 ${isArabic ? 'justify-end' : 'justify-start'}`}>
                 <Link

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4e8d8"/>
+      <stop offset="100%" stop-color="#fefaf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="470" rx="48" fill="#ffffff" stroke="#eadfd3" stroke-width="2"/>
+  <circle cx="180" cy="180" r="48" fill="#b33b2a"/>
+  <text x="260" y="200" font-family="'Playfair Display', 'Times New Roman', serif" font-size="54" fill="#2a2522">Neo-Decor</text>
+  <text x="260" y="260" font-family="'Cairo', 'Arial', sans-serif" font-size="28" fill="#5b5149">Magasin de tapis à Nador</text>
+  <text x="260" y="320" font-family="'Cairo', 'Arial', sans-serif" font-size="24" fill="#7b6f66">Salon • Chambre • Couloir • Berbère</text>
+  <rect x="260" y="380" width="420" height="10" rx="5" fill="#b33b2a" opacity="0.35"/>
+  <rect x="260" y="420" width="520" height="10" rx="5" fill="#b33b2a" opacity="0.2"/>
+</svg>

@@ -11,6 +11,7 @@ interface FooterProps {
 
 export function Footer({ locale, isArabic }: FooterProps) {
   const copy = content[locale].footer;
+  const hasTikTok = siteConfig.tiktokUrl && !siteConfig.tiktokUrl.startsWith('TODO_');
   return (
     <footer className="bg-white border-t border-gray-100">
       <div className="mx-auto max-w-6xl px-4 py-8">
@@ -30,9 +31,11 @@ export function Footer({ locale, isArabic }: FooterProps) {
             <Link href={siteConfig.instagramUrl} className="font-semibold text-charcoal hover:text-accent" target="_blank" rel="noreferrer">
               Instagram
             </Link>
-            <a className="font-semibold text-charcoal hover:text-accent" href="https://www.tiktok.com" target="_blank" rel="noreferrer">
-              TikTok
-            </a>
+            {hasTikTok ? (
+              <a className="font-semibold text-charcoal hover:text-accent" href={siteConfig.tiktokUrl} target="_blank" rel="noreferrer">
+                TikTok
+              </a>
+            ) : null}
           </div>
         </div>
         <div className={`mt-4 text-xs text-gray-500 ${isArabic ? 'text-right' : 'text-left'}`}>{copy.rights}</div>
