@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import Link from 'next/link';
 import { Locale, content } from '../lib/content';
 
 interface CategoriesProps {
@@ -7,7 +8,7 @@ interface CategoriesProps {
   isArabic: boolean;
 }
 
-const icons = ['🛋️', '🛏️', '🛣️', '🧶', '✨', '📏'];
+const icons = ['S', 'C', 'M', 'B', 'N', 'G'];
 
 export function Categories({ locale, isArabic }: CategoriesProps) {
   const copy = content[locale].categories;
@@ -22,7 +23,7 @@ export function Categories({ locale, isArabic }: CategoriesProps) {
           <p className="mt-3 max-w-2xl text-gray-600">
             {locale === 'ar'
               ? 'خيارات جاهزة للمساحات المختلفة مع إمكانية المقاسات الخاصة عند الحاجة.'
-              : 'Des options prêtes pour chaque espace, avec du sur-mesure possible.'}
+              : 'Des categories commerciales construites pour les recherches locales les plus frequentes a Nador.'}
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -32,7 +33,10 @@ export function Categories({ locale, isArabic }: CategoriesProps) {
               className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-gradient-to-br from-white via-sand to-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl" aria-hidden>
+                <span
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-sm font-semibold text-accent"
+                  aria-hidden
+                >
                   {icons[idx]}
                 </span>
                 <h3 className="text-lg font-semibold text-charcoal">{item.title}</h3>
@@ -40,6 +44,11 @@ export function Categories({ locale, isArabic }: CategoriesProps) {
               <p className={`mt-3 text-sm text-gray-700 ${isArabic ? 'text-right' : 'text-left'}`}>
                 {item.description}
               </p>
+              {item.href ? (
+                <Link href={item.href} className="mt-4 inline-flex text-sm font-semibold text-accent hover:text-charcoal">
+                  {locale === 'ar' ? 'افتح الصفحة' : 'Voir la page'}
+                </Link>
+              ) : null}
               <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
                 <div className="absolute right-4 top-4 h-10 w-10 rounded-full bg-accent/15 blur-xl" />
               </div>

@@ -1,4 +1,5 @@
 import { siteConfig } from '../lib/site.config';
+import { seoContent } from '../lib/seo';
 
 function hasValue(value: string | null | undefined) {
   return Boolean(value && !value.startsWith('TODO_'));
@@ -26,33 +27,52 @@ export function LocalBusinessSchema() {
         }
       : undefined;
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Store',
-    name: siteConfig.businessName,
-    url: siteConfig.siteUrl,
-    telephone: siteConfig.whatsappNumber,
-    image: absoluteUrl(siteConfig.ogImage),
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: siteConfig.streetAddress,
-      addressLocality: siteConfig.addressLocality,
-      postalCode: siteConfig.postalCode,
-      addressCountry: siteConfig.addressCountry,
-    },
-    hasMap: siteConfig.googleMapsUrl,
-    sameAs,
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '09:30',
-        closes: '18:00',
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': ['LocalBusiness', 'Store'],
+      '@id': `${siteConfig.siteUrl}/#store`,
+      name: siteConfig.businessName,
+      url: siteConfig.siteUrl,
+      telephone: siteConfig.whatsappNumber,
+      image: absoluteUrl(siteConfig.ogImage),
+      priceRange,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: siteConfig.streetAddress,
+        addressLocality: siteConfig.addressLocality,
+        postalCode: siteConfig.postalCode,
+        addressCountry: siteConfig.addressCountry,
       },
-    ],
-    priceRange,
-    geo,
-  };
+      geo,
+      areaServed: seoContent.serviceAreas.map((area) => ({
+        '@type': 'City',
+        name: area.name,
+      })),
+      hasMap: siteConfig.googleMapsUrl,
+      sameAs,
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '09:30',
+          closes: '18:00',
+        },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: seoContent.homepageFaq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    },
+  ];
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }

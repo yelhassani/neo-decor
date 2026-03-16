@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from 'next/link';
 import { Locale, content } from '../lib/content';
@@ -20,20 +20,20 @@ export function Header({ locale, onChange, isArabic }: HeaderProps) {
     { href: '#hero', label: nav.hero },
     { href: '#categories', label: nav.categories },
     { href: '#trust', label: nav.trust },
-    { href: '#gallery', label: nav.gallery },
+    { href: '/tapis-salon-nador', label: locale === 'ar' ? 'سجاد الصالون' : 'Tapis salon' },
     { href: '#location', label: nav.location },
     { href: '#faq', label: nav.faq },
   ];
 
   return (
-    <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-gray-100">
+    <header className="sticky top-0 z-30 border-b border-gray-100 bg-white/80 backdrop-blur">
       <div
         className={`mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:py-4 ${
           isArabic ? 'flex-row-reverse text-right' : ''
         }`}
       >
         <Link href="#hero" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white font-semibold shadow-md">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent font-semibold text-white shadow-md">
             ND
           </div>
           <div className="leading-tight">
@@ -47,9 +47,9 @@ export function Header({ locale, onChange, isArabic }: HeaderProps) {
           }`}
         >
           {links.map((item) => (
-            <a key={item.href} href={item.href} className="hover:text-accent transition-colors">
+            <Link key={item.href} href={item.href} className="transition-colors hover:text-accent">
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-3">
@@ -67,4 +67,3 @@ export function Header({ locale, onChange, isArabic }: HeaderProps) {
     </header>
   );
 }
-

@@ -27,7 +27,7 @@ export type Content = {
   };
   categories: {
     title: string;
-    items: { title: string; description: string }[];
+    items: { title: string; description: string; href?: string }[];
   };
   trust: {
     title: string;
@@ -71,9 +71,9 @@ export type Content = {
 export const content: Record<Locale, Content> = {
   fr: {
     seo: {
-      title: 'Neo-Decor Nador | Magasin de tapis, salon, chambre & couloir',
+      title: 'Magasin de tapis a Nador | Tapis salon, chambre, berbere et moquette',
       description:
-        'Magasin de tapis à Nador : salon, chambre, couloir, berbère, moderne et moquette. Conseils en magasin + WhatsApp.',
+        'Magasin de tapis a Nador pour salon, chambre, tapis marocain et moquette. Showroom Neo-Decor, conseils locaux, WhatsApp et Google Maps.',
     },
     nav: {
       hero: 'Accueil',
@@ -84,32 +84,32 @@ export const content: Record<Locale, Content> = {
       faq: 'FAQ',
     },
     hero: {
-      headline: 'Magasin de tapis à Nador : salon, chambre et couloir',
+      headline: 'Magasin de tapis a Nador pour salon, chambre, berbere et moquette',
       subheadline:
-        'Neo-Decor sélectionne des tapis salon, chambre, couloir et moquette avec un excellent rapport qualité/prix et des conseils sur place.',
-      primaryCta: 'WhatsApp',
-      secondaryCta: 'Itinéraire',
-      trustBullets: ['Qualité', 'Prix juste', 'Conseil local'],
+        'Neo-Decor vous accueille a Nador avec un showroom de tapis salon, tapis chambre, tapis marocains et moquette, plus des conseils rapides en magasin ou sur WhatsApp.',
+      primaryCta: 'Recevoir des photos sur WhatsApp',
+      secondaryCta: 'Voir le magasin sur Google Maps',
+      trustBullets: ['Showroom a Nador', 'Conseil local', 'Livraison autour de Nador'],
     },
     categories: {
-      title: 'Choisissez votre univers',
+      title: 'Categories recherchees a Nador',
       items: [
-        { title: 'Salon', description: 'Tapis doux et résistants pour vivre et recevoir.' },
-        { title: 'Chambre', description: 'Confort feutré et ambiance cosy pour le repos.' },
-        { title: 'Couloir', description: 'Formats allongés, moquette et anti-dérapant pour les passages.' },
-        { title: 'Berbère / Traditionnel', description: 'Motifs authentiques, laine sélectionnée et finitions soignées.' },
-        { title: 'Moderne', description: 'Designs épurés, couleurs actuelles et textures élégantes.' },
-        { title: 'Sur mesure / Grand format', description: 'Solutions personnalisées pour grands salons, hôtels ou bureaux.' },
+        { title: 'Tapis salon', description: 'Tapis de salon pour grand sejour, salon marocain ou espace TV.', href: '/tapis-salon-nador' },
+        { title: 'Tapis chambre', description: 'Modeles doux et confortables pour chambre adulte ou enfant.', href: '/tapis-chambre-nador' },
+        { title: 'Moquette', description: 'Moquette pour couloir, chambre, bureau et projets sur mesure.', href: '/moquette-nador' },
+        { title: 'Tapis berbere', description: 'Tapis marocains et berberes avec relief, texture et style authentique.', href: '/tapis-berbere-nador' },
+        { title: 'Tapis moderne', description: 'Designs actuels, tons naturels et finitions adaptees aux interieurs modernes.' },
+        { title: 'Grand format', description: 'Solutions pour grands salons, espaces de reception et commandes sur mesure.' },
       ],
     },
     trust: {
-      title: 'Pourquoi nos clients reviennent',
+      title: 'Pourquoi Neo-Decor attire les recherches locales',
       blocks: [
-        { title: 'Clients satisfaits', description: 'Accompagnement personnalisé et recommandations adaptées à chaque espace.' },
-        { title: 'Large choix', description: 'Sélection renouvelée de tapis premium au meilleur rapport qualité/prix.' },
-        { title: 'Conseils en magasin', description: 'Une équipe locale qui vous guide sur la taille, la matière et l’entretien.' },
+        { title: 'Selection showroom', description: 'Formats, textures et couleurs a comparer directement en magasin a Nador.' },
+        { title: 'Conseil local', description: 'Aide concrete sur la taille, la matiere, le style et l entretien selon votre piece.' },
+        { title: 'Contact rapide', description: 'WhatsApp, Instagram et Google Maps pour reserver une visite ou demander des photos.' },
       ],
-      ratingLabel: 'Placeholder avis Google 4,8/5',
+      ratingLabel: 'Ajoutez ici votre vrai volume d avis Google et la note moyenne actuelle.',
     },
     gallery: {
       title: 'Inspiration & textures',
@@ -124,47 +124,47 @@ export const content: Record<Locale, Content> = {
       ],
     },
     why: {
-      title: 'Neo-Decor, votre maison à Nador',
+      title: 'Showroom Neo-Decor a Nador',
       story:
-        'Boutique locale spécialisée dans le tapis premium. Nous sélectionnons chaque pièce pour allier confort, durabilité et esthétique, avec des conseils personnalisés pour votre intérieur à Nador et environs.',
+        'Notre magasin de tapis a Nador permet de voir les matieres, comparer les couleurs et choisir le bon format avant achat. Nous accompagnons les projets deco pour salon, chambre, couloir et espaces professionnels.',
       localNote:
-        'Vous cherchez un tapis à Nador ? Notre showroom propose des modèles pour salon, chambre, couloir et moquette, avec des conseils rapides sur place ou via WhatsApp.',
+        'Si vous cherchez un tapis marocain a Nador ou une moquette adaptee a votre espace, le showroom Neo-Decor est pense pour une decision rapide et rassurante.',
       highlights: [
-        'Sélection curatée : modèles premium et tendances',
-        'Valeur sûre : qualité au prix juste',
-        'Accompagnement : choix, installation, entretien',
-        'Disponible rapidement à Nador',
+        'Tapis salon, chambre, berbere et moquette dans un seul showroom',
+        'Aide sur la dimension ideale selon vos meubles et votre circulation',
+        'Conseils pour entretien, installation et harmonisation des couleurs',
+        'Acces rapide depuis Nador, Beni Ansar, Al Aroui et Selouane',
       ],
     },
     location: {
-      title: 'Venez voir et toucher en magasin',
-      description: 'Passez au showroom Neo-Decor à Nador pour comparer textures, couleurs et formats.',
+      title: 'Visiter le magasin',
+      description: 'Passez au showroom Neo-Decor a Nador pour voir les tapis en vrai et ouvrir directement votre itineraire.',
       addressLabel: 'Adresse',
       hoursLabel: 'Horaires',
-      directions: 'Itinéraire',
+      directions: 'Ouvrir Google Maps',
     },
     faq: {
-      title: 'Questions fréquentes',
+      title: 'FAQ magasin de tapis a Nador',
       items: [
-        { question: 'Où acheter un tapis à Nador ?', answer: 'Dans notre magasin Neo-Decor à Nador. Venez en showroom ou contactez-nous sur WhatsApp.' },
-        { question: 'Avez-vous du stock en magasin à Nador ?', answer: 'Oui, stock renouvelé régulièrement pour tapis salon, chambre et couloir.' },
-        { question: 'Livrez-vous à Nador et alentours ?', answer: 'Oui, livraison possible à Nador et villes proches. Demandez les options sur WhatsApp.' },
-        { question: 'Livrez-vous à Beni Ansar ou Al Aroui ?', answer: 'Oui, nous pouvons livrer dans les zones proches de Nador. Contactez-nous pour les délais.' },
-        { question: 'Quels moyens de paiement acceptez-vous ?', answer: 'Espèces, carte bancaire en magasin et virement. Paiement sécurisé sur place.' },
-        { question: 'Faites-vous des tailles sur mesure ?', answer: 'Oui, selon modèles. Partagez vos dimensions sur WhatsApp pour une estimation.' },
-        { question: 'Aidez-vous pour l’installation ?', answer: 'Nous conseillons sur la pose et l’entretien. Solutions d’installation disponibles sur demande.' },
-        { question: 'Quel est le niveau de prix ?', answer: 'Gamme premium à prix raisonnables, avec options adaptées à chaque budget.' },
-        { question: 'Comment vous contacter rapidement ?', answer: 'Cliquez sur le bouton WhatsApp, nous répondons vite aux demandes.' },
-        { question: 'Proposez-vous des tapis pour grands salons ?', answer: 'Oui, nous avons des formats larges et des options sur mesure selon le besoin.' },
+        { question: 'Ou acheter un tapis a Nador ?', answer: 'Neo-Decor a Nador propose un showroom de tapis salon, chambre, berbere et moquette avec conseils sur place.' },
+        { question: 'Avez-vous du stock en magasin a Nador ?', answer: 'Oui, plusieurs modeles sont visibles directement au showroom et la selection evolue regulierement.' },
+        { question: 'Livrez-vous a Nador et alentours ?', answer: 'Oui, nous pouvons organiser la livraison selon le produit vers Nador et les zones proches.' },
+        { question: 'Livrez-vous a Beni Ansar ou Al Aroui ?', answer: 'Oui, contactez-nous sur WhatsApp pour verifier le delai et la disponibilite selon votre zone.' },
+        { question: 'Avez-vous des tapis marocains a Nador ?', answer: 'Oui, nous proposons des tapis berberes et d inspiration marocaine selon le style recherche.' },
+        { question: 'Faites-vous des tailles sur mesure ?', answer: 'Oui, selon les collections et projets. Envoyez vos dimensions pour une orientation rapide.' },
+        { question: 'Proposez-vous de la moquette a Nador ?', answer: 'Oui, nous avons des solutions pour chambre, couloir, bureaux et projets decoratifs.' },
+        { question: 'Quel est le niveau de prix ?', answer: 'Nous proposons plusieurs gammes afin d adapter le choix a votre usage, votre style et votre budget.' },
+        { question: 'Comment vous contacter rapidement ?', answer: 'Le plus simple est de cliquer sur WhatsApp ou d ouvrir Google Maps pour venir au magasin.' },
+        { question: 'Proposez-vous des tapis pour grand salon marocain ?', answer: 'Oui, nous avons des grands formats et des options sur mesure pour les salons spacieux.' },
       ],
     },
     finalCta: {
-      title: 'Envie de voir les tapis en vrai ?',
-      description: 'Écrivez-nous sur WhatsApp ou venez directement au showroom Neo-Decor à Nador.',
-      cta: 'Parler sur WhatsApp',
+      title: 'Besoin d un tapis salon, chambre ou d une moquette a Nador ?',
+      description: 'Envoyez vos dimensions sur WhatsApp ou venez directement au showroom Neo-Decor pour comparer les modeles.',
+      cta: 'Envoyer ma demande sur WhatsApp',
     },
     footer: {
-      tagline: 'Magasin de tapis à Nador : conseils personnalisés',
+      tagline: 'Magasin de tapis a Nador avec showroom, conseils et contact rapide',
       rights: '© Neo-Decor. Tous droits réservés.',
       socials: 'Suivez-nous',
     },

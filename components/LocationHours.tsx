@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from 'next/link';
 import { Locale, content } from '../lib/content';
@@ -20,7 +20,7 @@ export function LocationHours({ locale, isArabic }: LocationHoursProps) {
   const openingHoursNote = siteConfig.openingHours;
   const hours = [
     { label: locale === 'ar' ? 'الإثنين - السبت' : 'Lun - Sam', value: '09h30 - 18h00' },
-    { label: locale === 'ar' ? 'الأحد' : 'Dimanche', value: locale === 'ar' ? 'مغلق' : 'Fermé' },
+    { label: locale === 'ar' ? 'الأحد' : 'Dimanche', value: locale === 'ar' ? 'مغلق' : 'Ferme' },
   ];
   return (
     <section id="location" className="bg-sand/60">
@@ -53,7 +53,7 @@ export function LocationHours({ locale, isArabic }: LocationHoursProps) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  WhatsApp
+                  {locale === 'ar' ? 'اطلب صورا على واتساب' : 'Recevoir une reponse sur WhatsApp'}
                 </Link>
                 <Link
                   href={mapsCtaUrl}

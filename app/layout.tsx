@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Cairo } from 'next/font/google';
 import '../styles/globals.css';
-import { content } from '../lib/content';
 import { siteConfig } from '../lib/site.config';
 import { LocalBusinessSchema } from '../components/LocalBusinessSchema';
 
@@ -15,18 +14,14 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
-  title: content.fr.seo.title,
-  description: content.fr.seo.description,
-  alternates: {
-    canonical: '/',
-    languages: {
-      fr: '/?lang=fr',
-      ar: '/?lang=ar',
-    },
+  title: {
+    default: 'Neo-Decor Nador',
+    template: '%s | Neo-Decor',
   },
+  description: 'Magasin de tapis et moquette a Nador avec showroom, conseils sur place et contact WhatsApp rapide.',
   openGraph: {
-    title: content.fr.seo.title,
-    description: content.fr.seo.description,
+    title: 'Neo-Decor Nador',
+    description: 'Showroom de tapis salon, chambre, tapis marocains et moquette a Nador.',
     url: '/',
     type: 'website',
     locale: 'fr_FR',
@@ -42,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: content.fr.seo.title,
-    description: content.fr.seo.description,
+    title: 'Neo-Decor Nador',
+    description: 'Magasin de tapis a Nador avec conseils, showroom et Google Maps.',
     images: [siteConfig.ogImage],
   },
   robots: {

@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import Link from 'next/link';
 import { Locale, content } from '../lib/content';
 
 interface FAQProps {
@@ -18,7 +19,7 @@ export function FAQ({ locale, isArabic }: FAQProps) {
           <p className="mt-3 max-w-3xl text-gray-700">
             {locale === 'ar'
               ? 'إجابات سريعة على أسئلة الزبناء حول التوصيل والمقاسات والدفع.'
-              : 'Réponses rapides sur la livraison, le paiement et les tailles personnalisées.'}
+              : 'Reponses rapides sur la livraison, la moquette, les tailles sur mesure et le showroom a Nador.'}
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -28,6 +29,17 @@ export function FAQ({ locale, isArabic }: FAQProps) {
               <p className={`mt-2 text-sm text-gray-700 ${isArabic ? 'text-right' : 'text-left'}`}>{item.answer}</p>
             </div>
           ))}
+        </div>
+        <div className={`mt-8 flex flex-wrap gap-3 ${isArabic ? 'justify-end' : 'justify-start'}`}>
+          <Link href="/tapis-salon-nador" className="text-sm font-semibold text-accent hover:text-charcoal">
+            {locale === 'ar' ? 'صفحة سجاد الصالون' : 'Page tapis salon Nador'}
+          </Link>
+          <Link href="/tapis-berbere-nador" className="text-sm font-semibold text-accent hover:text-charcoal">
+            {locale === 'ar' ? 'صفحة السجاد البربري' : 'Page tapis berbere Nador'}
+          </Link>
+          <Link href="/moquette-nador" className="text-sm font-semibold text-accent hover:text-charcoal">
+            {locale === 'ar' ? 'صفحة الموكيت' : 'Page moquette Nador'}
+          </Link>
         </div>
       </div>
     </section>

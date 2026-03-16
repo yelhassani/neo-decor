@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from 'next/link';
 import { siteConfig } from '../lib/site.config';
@@ -17,9 +17,9 @@ export function Hero({ locale, isArabic }: HeroProps) {
 
   return (
     <section id="hero" className="relative overflow-hidden bg-sand">
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-20%] top-[-10%] h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute right-[-10%] bottom-[-10%] h-72 w-72 rounded-full bg-gray-200 blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-72 w-72 rounded-full bg-gray-200 blur-3xl" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(179,59,42,0.08),transparent_40%)]" />
       </div>
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-10 sm:pt-16 lg:flex-row lg:items-center lg:gap-16">
@@ -31,25 +31,25 @@ export function Hero({ locale, isArabic }: HeroProps) {
             <h1 className="text-3xl font-semibold leading-tight text-charcoal sm:text-4xl lg:text-5xl">
               {copy.headline}
             </h1>
-            <div className={`order-2 flex flex-col gap-3 sm:flex-row ${isArabic ? 'sm:justify-end' : 'sm:justify-start'}`}>
-            <Link
-              href={whatsappLink}
-              className="w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:w-auto"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {copy.primaryCta}
-            </Link>
-            <Link
-              href={siteConfig.googleMapsUrl}
-              className="w-full rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-charcoal transition hover:-translate-y-0.5 hover:border-accent hover:text-accent sm:w-auto"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {copy.secondaryCta}
-            </Link>
-          </div>
             <p className="text-base text-gray-700 sm:text-xl">{copy.subheadline}</p>
+            <div className={`order-2 flex flex-col gap-3 sm:flex-row ${isArabic ? 'sm:justify-end' : 'sm:justify-start'}`}>
+              <Link
+                href={whatsappLink}
+                className="w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:w-auto"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {copy.primaryCta}
+              </Link>
+              <Link
+                href={siteConfig.googleMapsUrl}
+                className="w-full rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-charcoal transition hover:-translate-y-0.5 hover:border-accent hover:text-accent sm:w-auto"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {copy.secondaryCta}
+              </Link>
+            </div>
           </div>
           <div className={`flex flex-wrap gap-3 text-sm font-semibold text-gray-700 ${isArabic ? 'justify-end' : 'justify-start'}`}>
             {copy.trustBullets.map((item) => (
@@ -62,7 +62,7 @@ export function Hero({ locale, isArabic }: HeroProps) {
         </div>
         <div className="relative flex-1 rounded-3xl bg-white p-6 shadow-card ring-1 ring-gray-100">
           <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
-            Textures
+            {isArabic ? 'داخل المعرض' : 'Showroom'}
           </div>
           <div className="grid grid-cols-2 gap-3">
             {[1, 2, 3, 4].map((item) => (
@@ -77,7 +77,7 @@ export function Hero({ locale, isArabic }: HeroProps) {
           <p className={`mt-4 text-sm text-gray-600 ${isArabic ? 'text-right' : 'text-left'}`}>
             {locale === 'ar'
               ? 'صور توضيحية مؤقتة. استبدلها بصور صالة العرض الخاصة بك.'
-              : 'Images temporaires. Remplacez-les par vos photos de showroom.'}
+              : 'Ajoutez ici des photos reelles du showroom, des tapis salon et des tapis berberes.'}
           </p>
         </div>
       </div>
