@@ -53,7 +53,7 @@ export function HomePageClient({ initialLocale }: HomePageClientProps) {
       <main
         dir={isArabic ? 'rtl' : 'ltr'}
         lang={locale === 'ar' ? 'ar' : 'fr'}
-        className="pb-[10.5rem] sm:pb-0"
+        className="pb-0"
       >
         <Hero locale={locale} isArabic={isArabic} />
         <Trust locale={locale} isArabic={isArabic} />
