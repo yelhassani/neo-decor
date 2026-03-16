@@ -50,7 +50,11 @@ export function HomePageClient({ initialLocale }: HomePageClientProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sand via-white to-sand text-charcoal">
       <Header locale={locale} onChange={setLocale} isArabic={isArabic} />
-      <main dir={isArabic ? 'rtl' : 'ltr'} lang={locale === 'ar' ? 'ar' : 'fr'}>
+      <main
+        dir={isArabic ? 'rtl' : 'ltr'}
+        lang={locale === 'ar' ? 'ar' : 'fr'}
+        className="pb-[10.5rem] sm:pb-0"
+      >
         <Hero locale={locale} isArabic={isArabic} />
         <Trust locale={locale} isArabic={isArabic} />
         <Categories locale={locale} isArabic={isArabic} />
@@ -67,10 +71,10 @@ export function HomePageClient({ initialLocale }: HomePageClientProps) {
           isArabic ? 'text-right' : 'text-left'
         }`}
       >
-        <div className="mx-auto flex max-w-6xl flex-col gap-2">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2">
           <a
             href={whatsappLink}
-            className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg"
+            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-accent px-4 py-3 text-center text-xs font-semibold leading-tight text-white shadow-lg"
             target="_blank"
             rel="noreferrer"
           >
@@ -78,7 +82,7 @@ export function HomePageClient({ initialLocale }: HomePageClientProps) {
           </a>
           <a
             href={mapsCtaUrl}
-            className="inline-flex w-full items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-charcoal"
+            className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-3 text-center text-xs font-semibold leading-tight text-charcoal"
             target="_blank"
             rel="noreferrer"
           >
