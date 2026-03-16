@@ -50,7 +50,7 @@ export function HomePageClient({ initialLocale }: HomePageClientProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sand via-white to-sand text-charcoal">
       <Header locale={locale} onChange={setLocale} isArabic={isArabic} />
-      <main dir={isArabic ? 'rtl' : 'ltr'} lang={locale === 'ar' ? 'ar' : 'fr'} className="pb-44 sm:pb-0">
+      <main dir={isArabic ? 'rtl' : 'ltr'} lang={locale === 'ar' ? 'ar' : 'fr'}>
         <Hero locale={locale} isArabic={isArabic} />
         <Trust locale={locale} isArabic={isArabic} />
         <Categories locale={locale} isArabic={isArabic} />

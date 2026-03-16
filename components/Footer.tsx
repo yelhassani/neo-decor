@@ -14,7 +14,7 @@ export function Footer({ locale, isArabic }: FooterProps) {
   const hasTikTok = siteConfig.tiktokUrl && !siteConfig.tiktokUrl.startsWith('TODO_');
   return (
     <footer className="border-t border-gray-100 bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mx-auto max-w-6xl px-4 pb-36 pt-8 sm:pb-8">
         <div className={`flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between ${isArabic ? 'text-right sm:flex-row-reverse' : ''}`}>
           <div>
             <div className="text-lg font-semibold text-charcoal">{siteConfig.businessName}</div>
